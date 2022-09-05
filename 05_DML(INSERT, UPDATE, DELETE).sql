@@ -84,21 +84,33 @@ SELECT * FROM EMP_01;
 
 -- DEPARTMENT2 테이블에서 DEPT_ID가 'D9'인 행의 DEPT_TITLE을 '전략기획팀' 으로 수정
 
+UPDATE DEPARTMENT2 
+SET DEPT_TITLE = '전략기획팀'
+WHERE DEPT_ID ='D9';
 
 -- UPDATE 확인
+SELECT * FROM DEPARTMENT2;
+COMMIT;
 
-
-
-
--- EMP_SALARY 테이블에서 BONUS를 받지 않는 사원의 
+-- EMPLOYEE2 테이블에서 BONUS를 받지 않는 사원의 
 -- BONUS를 0.1로 변경
+UPDATE EMPLOYEE2
+SET BONUS = 0.1
+WHERE BONUS IS NULL; -- 15행 수정
 
+SELECT EMP_NAME, BONUS FROM EMPLOYEE2;
 
 
 ---------------------------------------
 
 -- * 조건절을 설정하지 않고 UPDATE 구문 실행 시 모든 행의 컬럼 값 변경.
+SELECT * FROM DEPARTMENT2;
 
+UPDATE DEPARTMENT2 SET
+DEPT_TITLE = '기술연구팀';
+
+ROLLBACK;
+SELECT EMP_NAME, BONUS FROM EMPLOYEE2;
 
 
 
