@@ -62,6 +62,82 @@
 				},
 				"auth-model": "oracle_native"
 			}
+		},
+		"oracle_thin-1836ce15de2-37d6c4ca87dcd10a": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "sys",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"configurationType": "MANUAL",
+				"home": "C:\\app\\wldbs\\product\\21c\\dbhomeXE",
+				"type": "dev",
+				"provider-properties": {
+					"show-only-one-schema@": "false",
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "true",
+					"@dbeaver-meta-use-alternative-table-query@": "false",
+					"oracle.meta-search-in-synonyms": "false",
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native",
+				"auth-properties": {
+					"oracle.logon-as": "sysdba"
+				}
+			}
+		},
+		"oracle_thin-1836ce3c891-3dae1f1e60d600bf": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "project_kjy",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "1521",
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"configurationType": "MANUAL",
+				"home": "C:\\app\\wldbs\\product\\21c\\dbhomeXE",
+				"type": "dev",
+				"provider-properties": {
+					"show-only-one-schema@": "false",
+					"@dbeaver-check-schema-content@": "false",
+					"@dbeaver-always-show-dba@": "false",
+					"@dbeaver-always-use-dba-views@": "false",
+					"@dbeaver-meta-use-sys-schema@": "false",
+					"@dbeaver-meta-use-simple-constraints@": "false",
+					"@dbeaver-use-rule-hint@": "false",
+					"@dbeaver-use-meta-optimizer@": "true",
+					"@dbeaver-meta-use-alternative-table-query@": "false",
+					"oracle.meta-search-in-synonyms": "false",
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			}
+		}
+	},
+	"virtual-models": {
+		"oracle_thin-1836ce3c891-3dae1f1e60d600bf": {
+			"PROJECT_KJY": {
+				"@properties": {
+					"erd.diagram.state": {
+						"serialized": "<diagram version=\"1\" name=\"empty\" time=\"202209271505\"><entities><data-source id=\"oracle_thin-1836ce3c891-3dae1f1e60d600bf\"><entity id=\"1\" name=\"DEPT_TB\" fq-name=\"PROJECT_KJY.DEPT_TB\" order=\"0\" x=\"432\" y=\"65\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"2\" name=\"EMP_TB\" fq-name=\"PROJECT_KJY.EMP_TB\" order=\"1\" x=\"211\" y=\"20\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"3\" name=\"JOB_TB\" fq-name=\"PROJECT_KJY.JOB_TB\" order=\"2\" x=\"432\" y=\"181\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"4\" name=\"ORDER_TB\" fq-name=\"PROJECT_KJY.ORDER_TB\" order=\"3\" x=\"211\" y=\"618\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"5\" name=\"PRODUCT_CATEGORY_TB\" fq-name=\"PROJECT_KJY.PRODUCT_CATEGORY_TB\" order=\"4\" x=\"629\" y=\"895\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"6\" name=\"PRODUCT_PRICE_TB\" fq-name=\"PROJECT_KJY.PRODUCT_PRICE_TB\" order=\"5\" x=\"211\" y=\"1080\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"7\" name=\"PRODUCT_TB\" fq-name=\"PROJECT_KJY.PRODUCT_TB\" order=\"6\" x=\"432\" y=\"861\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"8\" name=\"SALES_TARGET_TB\" fq-name=\"PROJECT_KJY.SALES_TARGET_TB\" order=\"7\" x=\"211\" y=\"364\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"9\" name=\"SALES_TB\" fq-name=\"PROJECT_KJY.SALES_TB\" order=\"8\" x=\"432\" y=\"1103\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"10\" name=\"SCHEDULE_TB\" fq-name=\"PROJECT_KJY.SCHEDULE_TB\" order=\"9\" x=\"20\" y=\"256\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"11\" name=\"STOCK_TB\" fq-name=\"PROJECT_KJY.STOCK_TB\" order=\"10\" x=\"211\" y=\"826\"><path name=\"PROJECT_KJY\"/></entity><entity id=\"12\" name=\"TEAM_TB\" fq-name=\"PROJECT_KJY.TEAM_TB\" order=\"11\" x=\"432\" y=\"410\"><path name=\"PROJECT_KJY\"/></entity></data-source></entities><relations><relation name=\"FK_EMP_DEPT_CODE\" fq-name=\"PROJECT_KJY.EMP_TB.FK_EMP_DEPT_CODE\" type=\"fk\" pk-ref=\"1\" fk-ref=\"2\"/><relation name=\"FK_SCHEDULE_EMP_NO\" fq-name=\"PROJECT_KJY.SCHEDULE_TB.FK_SCHEDULE_EMP_NO\" type=\"fk\" pk-ref=\"2\" fk-ref=\"10\"/><relation name=\"FK_EMP_JOB_CODE\" fq-name=\"PROJECT_KJY.EMP_TB.FK_EMP_JOB_CODE\" type=\"fk\" pk-ref=\"3\" fk-ref=\"2\"/><relation name=\"FK_CATEGORY_CODE\" fq-name=\"PROJECT_KJY.PRODUCT_TB.FK_CATEGORY_CODE\" type=\"fk\" pk-ref=\"5\" fk-ref=\"7\"/><relation name=\"FK_ORDER_PRODUCT_CODE\" fq-name=\"PROJECT_KJY.ORDER_TB.FK_ORDER_PRODUCT_CODE\" type=\"fk\" pk-ref=\"7\" fk-ref=\"4\"/><relation name=\"FK_PRODUCT_CODE\" fq-name=\"PROJECT_KJY.PRODUCT_PRICE_TB.FK_PRODUCT_CODE\" type=\"fk\" pk-ref=\"7\" fk-ref=\"6\"/><relation name=\"FK_STOCK_PRODUCT_CODE\" fq-name=\"PROJECT_KJY.STOCK_TB.FK_STOCK_PRODUCT_CODE\" type=\"fk\" pk-ref=\"7\" fk-ref=\"11\"/><relation name=\"FK_SALES_CODE\" fq-name=\"PROJECT_KJY.PRODUCT_PRICE_TB.FK_SALES_CODE\" type=\"fk\" pk-ref=\"9\" fk-ref=\"6\"/><relation name=\"FK_EMP_TEAM_CODE\" fq-name=\"PROJECT_KJY.EMP_TB.FK_EMP_TEAM_CODE\" type=\"fk\" pk-ref=\"12\" fk-ref=\"2\"/><relation name=\"FK_ORDER_TEAM_CODE\" fq-name=\"PROJECT_KJY.ORDER_TB.FK_ORDER_TEAM_CODE\" type=\"fk\" pk-ref=\"12\" fk-ref=\"4\"/><relation name=\"FK_SALES_TARGET_TEAM_CODE\" fq-name=\"PROJECT_KJY.SALES_TARGET_TB.FK_SALES_TARGET_TEAM_CODE\" type=\"fk\" pk-ref=\"12\" fk-ref=\"8\"/><relation name=\"FK_SCHEDULE_TEAM_CODE\" fq-name=\"PROJECT_KJY.SCHEDULE_TB.FK_SCHEDULE_TEAM_CODE\" type=\"fk\" pk-ref=\"12\" fk-ref=\"10\"/><relation name=\"FK_STOCK_TEAM_CODE\" fq-name=\"PROJECT_KJY.STOCK_TB.FK_STOCK_TEAM_CODE\" type=\"fk\" pk-ref=\"12\" fk-ref=\"11\"/></relations></diagram>"
+					}
+				}
+			}
 		}
 	},
 	"connection-types": {
