@@ -60,8 +60,36 @@ SELECT SEQ_TEST.CURRVAL FROM DUAL; --5
 
 ---------------------------------------------------------------------------------------------
 -- 실제 사용 예시
-CREATE TABLE EMP_TEMP
-AS SELECT EMP_ID, EMP_NAME FROM EMPLOYEE;
+CREATE TABLE TEST_TB(
+	TEST_ID NUMBER
+);
+
+CREATE SEQUENCE SEQ_TEST_TB
+INCREMENT BY 1                                      --증감숫자가 양수면 증가 음수면 감소 디폴트는 1
+START WITH TO_NUMBER(EXTRACT(YEAR FROM SYSDATE)||'0000')                                        -- 시작숫자의 디폴트값은 증가일때 MINVALUE 감소일때 MAXVALUE
+MINVALUE TO_NUMBER(EXTRACT(YEAR FROM SYSDATE)||'0000')                     -- NOMINVALUE : 디폴트값 설정, 증가일때 1, 감소일때 -1028 
+                                                    -- MINVALUE : 최소값 설정, 시작숫자와 작거나 같아야하고 MAXVALUE보다 작아야함
+MAXVALUE TO_NUMBER(EXTRACT(YEAR FROM SYSDATE)||'9999')                     -- NOMAXVALUE : 디폴트값 설정, 증가일때 1027, 감소일때 -1
+                               					    -- MAXVALUE : 최대값 설정, 시작숫자와 같거나 커야하고 MINVALUE보다 커야함
+NOCYCLE                                             --CYCLE 설정시 최대값에 도달하면 최소값부터 다시 시작 NOCYCLE 설정시 최대값 생성 시 시퀀스 생성중지
+NOCACHE;
+
+DELETE FROM EMPLOYEE2;
+SELECT MAX(EMP_ID) FROM EMPLOYEE2;
+ROLLBACK;
+
+SELECT EXTRACT(YEAR FROM SYSDATE) FROM DUAL;
+
+SELECT
+	CASE 
+		WHEN (SELECT MAX(EMP_ID) FROM EMPLOYEE2) IS NULL
+		THEN TO_NUMBER(EXTRACT(YEAR FROM SYSDATE)||'0001')
+		ELSE TO_NUMBER(EXTRACT(YEAR FROM SYSDATE)||'0000') + (SELECT MAX(EMP_ID) FROM EMPLOYEE2) + 1
+	END 번호
+FROM DUAL;
+
+
+
 
 SELECT * FROM EMP_TEMP;
 INSERT INTO EMP_TEMP VALUES(900,'홍길동');
